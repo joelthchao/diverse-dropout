@@ -338,7 +338,7 @@ layer {
   top: "fc7_clr"
   static_dropout_param {
     dropout_ratio: 0.5
-    dropout_file: "/home/master/02/joel1211/git_project/diverse-dropout/mask/test.txt"
+    dropout_file: "/home/master/02/joel1211/git_project/diverse-dropout/mask/fc8_005.txt"
   }
 }
 layer {

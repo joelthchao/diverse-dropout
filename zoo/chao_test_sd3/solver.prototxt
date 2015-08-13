@@ -1,4 +1,4 @@
-net: "/home/master/02/joel1211/joel/fc2conv/zoo/chao_test_sd3/train_val.prototxt"
+net: "/home/master/02/joel1211/git_project/diverse-dropout/zoo/chao_test_sd3/train_val.prototxt"
 test_iter: 1000
 test_interval: 1000
 base_lr: 0.001
