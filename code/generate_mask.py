@@ -14,6 +14,7 @@ import caffe
 parser = argparse.ArgumentParser(description='Generate mask for pretrained model')
 parser.add_argument('-th',type=float)
 parser.add_argument('-name',type=str)
+parser.add_argument('-out',type=str)
 args = vars(parser.parse_args())
 
 # Path
@@ -27,6 +28,7 @@ print 'Load from {}'.format(loadModel)
 # Collect weights
 fc_name = args['name']
 th = args['th']
+out_file = args['out']
 
 tmp_params = {fc_name: (net.params[fc_name][0].data, net.params[fc_name][1].data)}
 fc_weight = net.params[fc_name][0].data
@@ -36,6 +38,10 @@ fc_weight[np.absolute(fc_weight) < th] = 0
 mask_weight = net.params[fc_name][0].data
 mask_weight[np.absolute(mask_weight) < th] = 0
 mask_weight[np.absolute(mask_weight) >= th] = 1
-print mask_weight
-#print net.params[fc][0].data
-#print net.params[fc][1].data
+with open(out_file, 'w') as f:
+    for n in mask_weight.flatten():
+        f.write('{0:.0f} '.format(n))
+
+print 'Write mask to', out_file
+
+
