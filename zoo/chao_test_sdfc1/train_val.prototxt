@@ -363,6 +363,7 @@ layer {
       type: "constant"
       value: 0
     }
+    dropout_file: "/home/master/02/joel1211/git_project/diverse-dropout/mask/fc8_005.txt"
   }
 }
 layer {
