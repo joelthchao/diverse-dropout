@@ -10,5 +10,5 @@ max_iter: 200000
 momentum: 0.9
 weight_decay: 0.0005
 snapshot: 10000
-snapshot_prefix: "/tmp3/joel1211/static_dropout/model/chao_test_sdfc2"
+snapshot_prefix: "/tmp3/joel1211/static_dropout/model/chao_test_sdfc2_noclr"
 solver_mode: GPU

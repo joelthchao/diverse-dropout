@@ -261,10 +261,10 @@ layer {
   }
 }
 layer {
-  name: "fc6_clr"
+  name: "fc6"
   type: "InnerProduct"
   bottom: "pool5"
-  top: "fc6_clr"
+  top: "fc6"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -288,23 +288,23 @@ layer {
 layer {
   name: "relu6"
   type: "ReLU"
-  bottom: "fc6_clr"
-  top: "fc6_clr"
+  bottom: "fc6"
+  top: "fc6"
 }
 layer {
   name: "drop6"
   type: "Dropout"
-  bottom: "fc6_clr"
-  top: "fc6_clr"
+  bottom: "fc6"
+  top: "fc6"
   dropout_param {
     dropout_ratio: 0.5
   }
 }
 layer {
-  name: "fc7_clr"
+  name: "fc7"
   type: "InnerProduct"
-  bottom: "fc6_clr"
-  top: "fc7_clr"
+  bottom: "fc6"
+  top: "fc7"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -328,23 +328,23 @@ layer {
 layer {
   name: "relu7"
   type: "ReLU"
-  bottom: "fc7_clr"
-  top: "fc7_clr"
+  bottom: "fc7"
+  top: "fc7"
 }
 layer {
   name: "drop7"
   type: "Dropout"
-  bottom: "fc7_clr"
-  top: "fc7_clr"
+  bottom: "fc7"
+  top: "fc7"
   dropout_param {
     dropout_ratio: 0.5
   }
 }
 layer {
-  name: "fc8_clr"
+  name: "fc8"
   type: "StaticDropoutInnerProduct"
-  bottom: "fc7_clr"
-  top: "fc8_clr"
+  bottom: "fc7"
+  top: "fc8"
   param {
     lr_mult: 1
     decay_mult: 1
@@ -369,14 +369,14 @@ layer {
 layer {
   name: "accuracy"
   type: "Accuracy"
-  bottom: "fc8_clr"
+  bottom: "fc8"
   bottom: "label"
   top: "accuracy"
 }
 layer {
   name: "accuracyTop5"
   type: "Accuracy"
-  bottom: "fc8_clr"
+  bottom: "fc8"
   bottom: "label"
   top: "accuracyTop5"
   accuracy_param {
@@ -386,7 +386,7 @@ layer {
 layer {
   name: "loss"
   type: "SoftmaxWithLoss"
-  bottom: "fc8_clr"
+  bottom: "fc8"
   bottom: "label"
   top: "loss"
 }

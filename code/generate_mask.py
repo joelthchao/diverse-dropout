@@ -42,6 +42,6 @@ with open(out_file, 'w') as f:
     for n in mask_weight.flatten():
         f.write('{0:.0f} '.format(n))
 
-print 'Write mask to', out_file
+print 'Write mask to', out_file, 'with', np.count_nonzero(mask_weight), 'nonzero'
 
 
