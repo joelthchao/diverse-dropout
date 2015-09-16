@@ -2,4 +2,5 @@ log/
 .*
 *.test
 *.train
+mask/
 !/.gitignore
