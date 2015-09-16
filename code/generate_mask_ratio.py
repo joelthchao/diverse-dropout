@@ -44,6 +44,7 @@ mask_weight[np.absolute(mask_weight) < th] = 0
 mask_weight[np.absolute(mask_weight) >= th] = 1
 
 with open(out_file, 'w') as f:
+    f.write('{0} {1} '.format(mask_weight.shape[1], mask_weight.shape[0]))
     for n in mask_weight.flatten():
         f.write('{0:.0f} '.format(n))
 

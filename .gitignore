@@ -3,4 +3,5 @@ log/
 *.test
 *.train
 mask/
+*.caffemodel
 !/.gitignore

@@ -242,7 +242,7 @@ layer {
       value: 0.1
     }
   }
-layer {
+}
 layer {
   name: "relu5"
   type: "ReLU"
